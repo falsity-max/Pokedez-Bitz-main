@@ -107,7 +107,65 @@
 
 }
 
+// ==============================
+// TARJETAS
+// ==============================
 
+function crearCard(pokemon){
+
+  conts card = document.createElement("article");
+
+  card.classLit.add("card");
+
+  card.innerHTML = `
+
+  <img src="${pokemon.sprites.other["official-artwork"].front_default}"
+             alt="${pokemon.name}">
+
+<div class="card-body">
+
+            <p class="id">
+
+                #${pokemon.id}
+
+            </p>
+
+            <h3>
+
+                ${capitalizar(pokemon.name)}
+
+            </h3>
+
+            <span class="tipo ${pokemon.types[0].type.name}">
+
+                ${capitalizar(pokemon.types[0].type.name)}
+
+            </span>
+
+            <button>
+
+                Ver Información
+
+            </button>
+
+        </div>
+
+    `;
+
+  card.querySelector("button")
+      .addEventListener("click", () => {
+
+          mostrarDetalle(pokemon);
+        
+          });
+
+  pokemonContainer.appendChid(card);
+
+}
+
+
+  
+  
 
 
          
