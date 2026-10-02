@@ -76,7 +76,42 @@
 
        try {
 
+           const respuesta = await fetch(
 
+             `${URL}?offset=${offset}&limit=${limite}`
+
+             (;
+
+           conts datos = await respuesta . jason();
+
+         pokemonCounter.texcotent =
+           `${datos.results.length} Pokémon`;
+
+         for(conts pokemon of datos.results) {
+
+          conts respuestaPokemon = await fetch(pokemon.url);
+
+           conts info  = await respuestaPokemon.json();
+
+           crearCard(info);
+
+         }
+
+    } catch  (error) {
+
+         mostrarError("Error cargando la pokedex");
+
+     }
+
+     ocultarLoding(); 
+
+}
+
+
+
+
+         
+            
 
     
 
@@ -132,4 +167,4 @@
 
 
 
-  0
+  
